@@ -42,9 +42,9 @@ function getSubstituted(source, data) {
     console.log("Id of post: ", data.id);
     var content = db.getBlogEntry(data.id);
     console.log("Rendering blog with data:");
-    console.log(function () { for (param in content) console.log(param + ": " + content[param] + "\n") }());
-    var template = hbs.compile(getRendered(source),content);
-    return template(data);
+    console.log(function () { for (param in content) console.log(param + ": " + content[param]) }());
+    var template = hbs.compile(source, content);
+    return getRendered(template(data));
 };
 
 function getViewEnd() {

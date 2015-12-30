@@ -17,11 +17,11 @@ http.createServer(function (req, res) {
     var data = routingEngine.getData(req.url);
     
     console.log("Path requested: " + path);
-    if (data !== null) {
+    if (data === {}) {
         console.log("Data provided: ");
         console.log(function () { for (param in data) console.log(param + ": " + data[param]) }())
     } else {
-    console.log("No data provided.")};
+    console.log("No data provided. Rendering dataless version.")};
 
     if (path != null && req.method.toUpperCase() === "GET") {
         console.log("Got a valid path.");
