@@ -1,4 +1,4 @@
-﻿# Multistage rendering
+# Multistage rendering
 
 A simple server for serving html rendered from .md files via HTTP protocol.
 Uses standard node.js library where possible, depending so far only on hbs and marked.
