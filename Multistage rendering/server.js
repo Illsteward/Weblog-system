@@ -16,18 +16,18 @@ http.createServer(function (req, res) {
     var page = {};
     var data = routingEngine.getData(req.url);
     
-    console.log("Data provided: " + JSON.stringify(data));
+    //console.log("Data provided: " + JSON.stringify(data));
 
-    console.log("Path requested: " + path);
+    //console.log("Path requested: " + path);
 
     if (path != null && req.method.toUpperCase() === "GET") {
-        console.log("Got a valid path.");
+        //console.log("Got a valid path.");
         fs.access(path, fs.R_OK | fs.W_OK, function (err) {
             if (err) {
-                console.log("Unable to open template.");
+                //console.log("Unable to open template.");
                 page = viewEngine.get404();
             } else {
-                console.log("Rendering template.");
+                //console.log("Rendering template.");
                 page = viewEngine.getView(path, data);
             };
             servePage(page, res);

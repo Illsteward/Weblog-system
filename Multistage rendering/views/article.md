@@ -1,6 +1,6 @@
 ﻿
-# And this is the title: {{title}}
+# {{title}}
 
-## For article that was published: {{published}}
+## Published: {{published}}
 
-With the {{body}} of a god.
+{{body}}

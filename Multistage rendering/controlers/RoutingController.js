@@ -17,11 +17,11 @@ exports.getSourceLocation = function (request) {
     var parsedURL = url.parse(request, true);
     var expectedPath = parsedURL.pathname.substring(1);
     
-    console.log("View Paths: " + viewPaths);
+   // console.log("View Paths: " + viewPaths);
     
-    console.log("URL parsed from getSourceLocation: " + parsedURL.pathname);
+   //console.log("URL parsed from getSourceLocation: " + parsedURL.pathname);
     
-    console.log("Path expected by request: " + expectedPath);
+   //console.log("Path expected by request: " + expectedPath);
 
     if (parsedURL.pathname == '/') {return viewBase + 'index.md'};
     

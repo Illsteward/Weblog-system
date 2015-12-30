@@ -2,8 +2,7 @@
 var fs = require('fs');
 var marked = require('marked');
 var db = require('../models/DummyDB.js');
-var View = { id : "", HTML : "", source: "", statusCode: 200, contentType: 'text/html' };
-
+var View = {HTML : "", source: "", statusCode: 200, contentType: 'text/html' };
 
 exports.getView = function (path, data) {
     View.statusCode = 200;
@@ -12,8 +11,10 @@ exports.getView = function (path, data) {
     console.log("Source: ", View.source);
     View.HTML += getViewStart();
     if (JSON.stringify(data).length > 2) {
+        console.log("Launching substitution.");
         View.HTML += getSubstituted(View.source, data);
     } else {
+        console.log("Launching markdown render.");
         View.HTML += getRendered(View.source);
     };
     View.HTML += getViewEnd();
@@ -39,12 +40,14 @@ function getRendered(source) {
     };
     
 function getSubstituted(source, data) {
+    if (data.id) {
     console.log("Id of post: ", data.id);
     var content = db.getBlogEntry(data.id);
     console.log("Rendering blog with data:");
-    console.log(function () { for (param in content) console.log(param + ": " + content[param]) }());
+        console.log(function () { for (param in content) console.log(param + ": " + content[param]) }());
+    } else content = data;
     var template = hbs.compile(source, content);
-    return getRendered(template(data));
+    return getRendered(template(content));
 };
 
 function getViewEnd() {
