@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Multistage rendering", "..\Express Tutorial\Multistage rendering\Multistage rendering.njsproj", "{923878AD-B6E1-4F82-92E1-468F415C0237}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Multistage rendering", "Multistage rendering\Multistage rendering.njsproj", "{923878AD-B6E1-4F82-92E1-468F415C0237}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
