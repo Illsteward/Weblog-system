@@ -11,7 +11,7 @@ exports.getView = function (path, data) {
     View.source = fs.readFileSync(path).toString();
     console.log("Source: ", View.source);
     View.HTML += getViewStart();
-    if (data) {
+    if (JSON.stringify(data).length > 2) {
         View.HTML += getSubstituted(View.source, data);
     } else {
         View.HTML += getRendered(View.source);

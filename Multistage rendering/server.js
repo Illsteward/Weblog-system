@@ -16,12 +16,9 @@ http.createServer(function (req, res) {
     var page = {};
     var data = routingEngine.getData(req.url);
     
+    console.log("Data provided: " + JSON.stringify(data));
+
     console.log("Path requested: " + path);
-    if (data === {}) {
-        console.log("Data provided: ");
-        console.log(function () { for (param in data) console.log(param + ": " + data[param]) }())
-    } else {
-    console.log("No data provided. Rendering dataless version.")};
 
     if (path != null && req.method.toUpperCase() === "GET") {
         console.log("Got a valid path.");
