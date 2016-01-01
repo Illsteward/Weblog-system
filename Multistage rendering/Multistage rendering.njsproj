@@ -39,11 +39,13 @@
     <Content Include="views\404.html" />
     <Content Include="views\article.md" />
     <Content Include="views\index.md" />
+    <Content Include="views\styles\index.sass" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="models\" />
     <Folder Include="controlers\" />
     <Folder Include="views\" />
+    <Folder Include="views\styles\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

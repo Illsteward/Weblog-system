@@ -11,11 +11,12 @@ function servePage(page, res) {
     res.end();
 };
 
+
+
 http.createServer(function (req, res) {
     var path = routingEngine.getSourceLocation(req.url);
     var page = {};
     var data = routingEngine.getData(req.url);
-    
     //console.log("Data provided: " + JSON.stringify(data));
 
     //console.log("Path requested: " + path);
